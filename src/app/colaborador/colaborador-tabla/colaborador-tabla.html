@@ -1,0 +1,28 @@
+<div class="asignaciones-container">
+  <table class="tabla-asignaciones">
+    <thead>
+      <tr>
+        <th>ID Asignacion</th>
+        <th>ID Solicitud</th>
+        <th>Motivo</th>
+        <th>Nombre Usuario</th>
+        <th>Tipo de Solicitud</th>
+        <th>Fecha Registro</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asignacion of asignacionesbyId">
+        <td>{{ asignacion.idAsignacion }}</td>
+        <td>{{ asignacion.idSolicitud }}</td>
+        <td>{{ asignacion.motivo }}</td>
+        <td>{{ asignacion.nombreUsuario }}</td>
+        <td>{{ asignacion.nombreTipoSolicitud }}</td>
+        <td>{{ asignacion.fechaRegistro | date: 'dd/MM/yyyy HH:mm' }}</td>
+        <td>
+          <button [routerLink]="['../agregarActividad']">Registrar Actividades</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

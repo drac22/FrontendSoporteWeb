@@ -1,0 +1,31 @@
+<div>
+  <h2>Formulario de Cliente</h2>
+
+  <form [formGroup]="clienteForm" (ngSubmit)="registrarCliente()">
+    <div>
+      <label for="nombreCliente">Nombre del Cliente</label>
+      <input id="nombreCliente" type="text" formControlName="nombreCliente" />
+    </div>
+
+    <div>
+      <label>Tipo de Cliente</label>
+      <select id="tipoCliente" formControlName="tipoCliente" required>
+        <option value="">Seleccione un tipo</option>
+        <option *ngFor="let item of tipoCliente" [value]="item.idTipoCliente">
+          {{ item.tipoCliente }}
+        </option>
+      </select>
+    </div>
+
+    <div>
+      <label>Asociar Software</label>
+      <select id="softwares" formControlName="softwares" multiple required>
+        <option *ngFor="let item of softwares" [value]="item.idSoftware">
+          {{item.nombre}}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit">Registrar Cliente</button>
+  </form>
+</div>

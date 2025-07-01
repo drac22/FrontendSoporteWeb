@@ -1,0 +1,30 @@
+<div>
+  <h2>Registro de Solicitud</h2>
+  <form [formGroup]="solicitudForm" (ngSubmit)="registratSolicitud()">
+    <div>
+      <label for="motivo">Motivo</label>
+      <textarea
+        id="motivo"
+        name="motivo"
+        rows="4"
+        cols="50"
+        required
+        formControlName="motivo"
+      ></textarea>
+    </div>
+    <div>
+      <label for="rol">Seleccionar Tipo Solicitud</label>
+      <select id="rol" name="rol" formControlName="tipoSolicitud">
+        <option value="">Seleccione</option>
+        <option
+          *ngFor="let item of tipoSolicitud"
+          [value]="item.idTipoSolicitud"
+        >
+          {{item.tipoSolicitud}}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit">Registrar</button>
+  </form>
+</div>

@@ -1,0 +1,53 @@
+.asignaciones-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: auto;
+}
+
+.tabla-asignaciones {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-asignaciones thead {
+  background-color: #0078d4;
+  color: white;
+}
+
+.tabla-asignaciones th,
+.tabla-asignaciones td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+}
+
+.tabla-asignaciones tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.tabla-asignaciones tbody tr:hover {
+  background-color: #e6f0ff;
+  transition: background-color 0.3s ease;
+}
+
+.tabla-asignaciones button {
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tabla-asignaciones button:hover {
+  background-color: #218838;
+}

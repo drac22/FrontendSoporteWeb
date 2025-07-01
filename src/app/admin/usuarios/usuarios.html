@@ -1,0 +1,61 @@
+<div>
+  <h2>Registro de Usuario</h2>
+
+  <form [formGroup]="usuarioForm" (ngSubmit)="registrarUsuario()">
+    <div>
+      <label for="nombreUsuario">Nombre de Usuario</label>
+      <input
+        type="text"
+        id="nombreUsuario"
+        name="nombreUsuario"
+        formControlName="nombreUsuario"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="telefonoUsuario">Teléfono</label>
+      <input
+        type="tel"
+        id="telefonoUsuario"
+        name="telefonoUsuario"
+        formControlName="telefonoUsuario"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="correo">Correo Electrónico</label>
+      <input
+        type="email"
+        id="correo"
+        name="correo"
+        formControlName="correo"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="contrasena">Contraseña</label>
+      <input
+        type="password"
+        id="contrasena"
+        name="contrasena"
+        formControlName="password"
+        required
+      />
+    </div>
+
+    <div>
+      <label for="cliente">Asociado a Cliente</label>
+      <select id="cliente" name="cliente" formControlName="asociadoCliente">
+        <option value="">Seleccione un cliente</option>
+        <option *ngFor="let item of clientes" [value]="item.idCliente">
+          {{item.nombreCliente}}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit">Registrar</button>
+  </form>
+</div>

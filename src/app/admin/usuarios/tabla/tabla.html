@@ -1,0 +1,32 @@
+<div class="usuario-container">
+  <div class="boton-agregar">
+    <button [routerLink]="['../agregar']">Agregar Usuario</button>
+  </div>
+  <table class="tabla-usuarios">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Cliente</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let usuario of usuarios">
+        <td>{{ usuario.idUsuario }}</td>
+        <td>{{ usuario.nombreUsuario }}</td>
+        <td>{{ usuario.telefonoUsuario }}</td>
+        <td>{{ usuario.cliente.nombreCliente }}</td>
+        <td class="acciones-usuarios">
+          <!-- <button class="btn-editar-usuario" [routerLink]="['../editar']">
+            ✏️ Editar
+          </button> -->
+          <button class="btn-eliminar-usuario" (click)="eliminarUsuario(usuario.idUsuario)">
+            🗑️ Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

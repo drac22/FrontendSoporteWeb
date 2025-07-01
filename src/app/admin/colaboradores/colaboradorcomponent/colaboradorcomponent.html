@@ -1,0 +1,61 @@
+<div>
+    <h2>Registro de Colaboradores</h2>
+  
+    <form [formGroup]="colaboradorForm" (ngSubmit)="registrarColaborador()">
+      <div>
+        <label for="nombreColaborador">Nombre del Colaborador</label>
+        <input
+          type="text"
+          id="nombreColaborador"
+          name="nombreColaborador"
+          formControlName="nombreColaborador"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="telefonoColaborador">Teléfono</label>
+        <input
+          type="tel"
+          id="telefonoColaborador"
+          name="telefonoColaborador"
+          formControlName="telefonoColaborador"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="correo">Correo Electrónico</label>
+        <input
+          type="email"
+          id="correo"
+          name="correo"
+          formControlName="correo"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="contrasena">Contraseña</label>
+        <input
+          type="password"
+          id="contrasena"
+          name="contrasena"
+          formControlName="password"
+          required
+        />
+      </div>
+  
+      <div>
+        <label for="rol">Seleccionar rol</label>
+        <select id="rol" name="rol" formControlName="idRol">
+          <option value="">Seleccione un cliente</option>
+          <option *ngFor="let item of rols" [value]="item.idRol">
+            {{item.rol}}
+          </option>
+        </select>
+      </div>
+  
+      <button type="submit">Registrar</button>
+    </form>
+  </div>

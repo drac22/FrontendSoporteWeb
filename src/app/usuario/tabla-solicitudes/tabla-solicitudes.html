@@ -1,0 +1,23 @@
+<div class="colaborador-container">
+    <table class="tabla-colaborador">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Motivo</th>
+          <th>TipoSolicitud</th>
+          <th>Fecha Registro</th>
+          <th>Estado</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let solicitud of solicitudesbyId">
+          <td>{{ solicitud.idSolicitud }}</td>
+          <td>{{ solicitud.motivo }}</td>
+          <td>{{ solicitud.tipoSolicitud }}</td>
+          <td>{{ solicitud.fechaRegistro }}</td>
+          <td>{{ solicitud.estado }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div> 
+

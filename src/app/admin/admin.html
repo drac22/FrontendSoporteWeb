@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <ul class="nav-list">
+    <li>
+      <a routerLink="/vistaAdmin/clientes/lista" routerLinkActive="activo"
+        >Clientes</a
+      >
+    </li>
+    <li><a routerLink="/vistaAdmin/usuarios/lista" routerLinkActive="activo">Usuarios</a></li>
+    <li><a routerLink="/vistaAdmin/colaboradores/lista" routerLinkActive="activo">Colaboradores</a></li>
+    <li><a routerLink="asignacion" routerLinkActive="activo">Asignación</a></li>
+  </ul>
+</nav>
+
+<div class="contenido">
+  <router-outlet></router-outlet>
+</div>

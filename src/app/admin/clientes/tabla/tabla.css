@@ -1,0 +1,106 @@
+.cliente-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  font-family: "Segoe UI", sans-serif;
+  overflow-x: auto;
+}
+
+/* Botón Agregar Cliente */
+.boton-agregar {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+
+.boton-agregar button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton-agregar button:hover {
+  background-color: #218838;
+}
+
+/* Tabla */
+.tabla-clientes {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tabla-clientes thead {
+  background-color: #0078d4;
+  color: white;
+}
+
+.tabla-clientes th,
+.tabla-clientes td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: top;
+  text-align: left;
+}
+
+/* Fila alternada */
+.tabla-clientes tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover sobre fila */
+.tabla-clientes tbody tr:hover {
+  background-color: #e6f0ff;
+  transition: background-color 0.3s ease;
+}
+
+/* Estilo de la lista de softwares */
+.tabla-clientes ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* Acciones */
+.acciones-clientes {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn-editar-cliente,
+.btn-eliminar-cliente {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-editar-cliente {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-editar-cliente:hover {
+  background-color: #e0a800;
+}
+
+.btn-eliminar-cliente {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-eliminar-cliente:hover {
+  background-color: #c82333;
+}

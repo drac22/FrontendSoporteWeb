@@ -1,0 +1,28 @@
+<div class="colaborador-asignacion">
+  <table class="tabla-asignacion">
+    <thead>
+      <tr>
+        <th>ID Solicitud</th>
+        <th>Nombre del Usuario</th>
+        <th>Motivo</th>
+        <th>Tipo de Solicitud</th>
+        <th>Fecha Registro</th>
+        <th>Estado</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let solicitud of solicitudes">
+        <td>{{ solicitud.idSolicitud }}</td>
+        <td>{{ solicitud.usuario.nombreUsuario }}</td>
+        <td>{{ solicitud.motivo }}</td>
+        <td>{{ solicitud.tipoSolicitud.tipoSolicitud }}</td>
+        <td>{{ solicitud.fechaRegistro | date: 'dd/MM/yyyy HH:mm' }}</td>
+        <td>{{ solicitud.estado.estadoSolicitud }}</td>
+        <td class="acciones-asignacion">
+          <button class="btn-asignacion">Asignar Colaboradores</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

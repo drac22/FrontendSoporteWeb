@@ -1,0 +1,32 @@
+<div class="colaborador-container">
+  <div class="boton-agregar">
+    <button [routerLink]="['../agregar']">Agregar Colaborador</button>
+  </div>
+  <table class="tabla-colaborador">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Teléfono</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let colaborador of colaboradores">
+        <td>{{ colaborador.idColaborador }}</td>
+        <td>{{ colaborador.nombreColaborador }}</td>
+        <td>{{ colaborador.telefonoColaborador }}</td>
+        <td>{{ colaborador.rol.rol }}</td>
+        <td class="acciones-colaborador">
+          <!-- <button class="btn-editar-colaborador" [routerLink]="['../editar']">
+            ✏️ Editar
+          </button> -->
+          <button class="btn-eliminar-colaborador" (click)="eliminarColaborador(colaborador.idColaborador)">
+            🗑️ Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

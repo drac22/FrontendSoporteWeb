@@ -1,0 +1,40 @@
+<div class="cliente-container">
+  <div class="boton-agregar">
+    <button [routerLink]="['../agregar']">Agregar Cliente</button>
+  </div>
+
+  <table class="tabla-clientes">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Softwares</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{ cliente.idCliente }}</td>
+        <td>{{ cliente.nombreCliente }}</td>
+        <td>{{ cliente.tipoCliente.tipoCliente }}</td>
+        <td>
+          <ul>
+            <li *ngFor="let s of cliente.softwares">{{ s.nombre }}</li>
+          </ul>
+        </td>
+        <td class="acciones-clientes">
+          <!-- <button class="btn-editar-cliente" [routerLink]="['../editar']">
+            ✏️ Editar
+          </button> -->
+          <button
+            class="btn-eliminar-cliente"
+            (click)="eliminarCliente(cliente.idCliente)"
+          >
+            🗑️ Eliminar
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
