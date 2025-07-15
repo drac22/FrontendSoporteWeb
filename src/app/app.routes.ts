@@ -3,7 +3,7 @@ import { Login } from './login/login';
 import { Admin } from './admin/admin';
 import { Clientes } from './admin/clientes/clientes';
 import { Usuarios } from './admin/usuarios/usuarios';
-import { Asignacion } from './admin/asignacion/asignacion';
+import { AsignacionComponent } from './admin/asignacion/asignacion';
 import { TablaClientes } from './admin/clientes/tabla/tabla';
 import { TablaUsuarios } from './admin/usuarios/tabla/tabla';
 import { Colaboradorcomponent } from './admin/colaboradores/colaboradorcomponent/colaboradorcomponent';
@@ -43,7 +43,13 @@ export const routes: Routes = [
           { path: 'agregar', component: Colaboradorcomponent },
         ],
       },
-      { path: 'asignacion', component: AsignacionTabla },
+      {
+        path: 'asignacion',
+        children: [
+          { path: '', component: AsignacionTabla },
+          { path: 'agregar/:idSolicitud', component: AsignacionComponent },
+        ],
+      },
     ],
   },
   {
@@ -60,7 +66,10 @@ export const routes: Routes = [
     children: [
       { path: 'asignaciones', component: ColaboradorTabla },
       { path: 'culminacion', component: TablaSolicitudes },
-      { path: 'agregarActividad', component: ColaboradorComponent },
+      {
+        path: 'agregarActividad/:idAsignacion',
+        component: ColaboradorComponent,
+      },
     ],
   },
 ];

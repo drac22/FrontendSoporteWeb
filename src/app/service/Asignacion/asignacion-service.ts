@@ -7,7 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class AsignacionService {
-  private apiUrl = 'http://localhost:8080/api/mostrarAsignacionesById';
+  private urlMostrarAsignacionesById =
+    'http://localhost:8080/api/mostrarAsignacionesById';
+  private urlAsignarColaborador =
+    'http://localhost:8080/api/asignarColaboradores';
 
   constructor(private http: HttpClient) {}
 
@@ -15,7 +18,11 @@ export class AsignacionService {
     idColaborador: number
   ): Observable<AsignacionDTOResponse[]> {
     return this.http.get<AsignacionDTOResponse[]>(
-      `${this.apiUrl}/${idColaborador}`
+      `${this.urlMostrarAsignacionesById}/${idColaborador}`
     );
+  }
+
+  asignarColaborador(asignar: any): Observable<any> {
+    return this.http.post(this.urlAsignarColaborador, asignar);
   }
 }

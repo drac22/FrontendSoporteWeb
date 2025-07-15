@@ -46,15 +46,17 @@ export class SolicitudComponente {
 
   registratSolicitud(): void {
     if (this.solicitudForm.valid) {
+      const idUsuario = parseInt(localStorage.getItem('id') || '0', 10); // 👈 Recupera y convierte a número
+
       const SolicitudDTO = {
-        idUsuario: 5,
+        idUsuario: idUsuario,
         motivo: this.solicitudForm.value.motivo,
         idTipoSolicitud: this.solicitudForm.value.tipoSolicitud,
       };
 
       this.solicitudService.registrarSolicitud(SolicitudDTO).subscribe(
-        (resp) => console.log('Usuario creado correctamente', resp),
-        (error) => console.error('Error creando usuario:', error)
+        (resp) => console.log('Solicitud registrada correctamente', resp),
+        (error) => console.error('Error registrando solicitud:', error)
       );
     }
   }

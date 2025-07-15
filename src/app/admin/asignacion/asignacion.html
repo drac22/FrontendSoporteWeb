@@ -1,1 +1,23 @@
-<p>asignacion works!</p>
+<div>
+  <h2>Registrar Asignación</h2>
+
+  <form [formGroup]="asignacionForm" (ngSubmit)="asignarColaborador()">
+    <div>
+      <label for="colaborador">Seleccionar Colaborador</label>
+      <select id="colaborador" formControlName="idColaborador" required>
+        <option value="">Seleccione un colaborador</option>
+        <option *ngFor="let col of colaboradores" [value]="col.idColaborador">
+          {{ col.nombreColaborador | uppercase }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <label>
+        <input type="checkbox" formControlName="esAdmin" />
+        ¿Es Coordinador?
+      </label>
+    </div>
+
+    <button type="submit">Registrar</button>
+  </form>
+</div>

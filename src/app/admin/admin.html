@@ -5,10 +5,19 @@
         >Clientes</a
       >
     </li>
-    <li><a routerLink="/vistaAdmin/usuarios/lista" routerLinkActive="activo">Usuarios</a></li>
-    <li><a routerLink="/vistaAdmin/colaboradores/lista" routerLinkActive="activo">Colaboradores</a></li>
-    <li><a routerLink="asignacion" routerLinkActive="activo">Asignación</a></li>
+    <li>
+      <a routerLink="/vistaAdmin/usuarios/lista" routerLinkActive="activo"
+        >Usuarios</a
+      >
+    </li>
+    <li>
+      <a routerLink="/vistaAdmin/colaboradores/lista" routerLinkActive="activo"
+        >Colaboradores</a
+      >
+    </li>
+    <li><a routerLink="/vistaAdmin/asignacion" routerLinkActive="activo">Asignación</a></li>
   </ul>
+  <button (click)="logout()">Salir</button>
 </nav>
 
 <div class="contenido">

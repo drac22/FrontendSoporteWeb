@@ -8,6 +8,7 @@
         <th>Nombre Usuario</th>
         <th>Tipo de Solicitud</th>
         <th>Fecha Registro</th>
+        <th>Estado</th>
         <th>Acciones</th>
       </tr>
     </thead>
@@ -19,9 +20,21 @@
         <td>{{ asignacion.nombreUsuario }}</td>
         <td>{{ asignacion.nombreTipoSolicitud }}</td>
         <td>{{ asignacion.fechaRegistro | date: 'dd/MM/yyyy HH:mm' }}</td>
-        <td>
-          <button [routerLink]="['../agregarActividad']">Registrar Actividades</button>
-        </td>
+        <td>{{asignacion.estado}}</td>
+        <button
+          *ngIf="asignacion.estado !== 'SOLUCIONADO'"
+          [routerLink]="['/vistaColaborador/agregarActividad', asignacion.idAsignacion]"
+        >
+          Registrar Actividades
+        </button>
+
+        <button
+          *ngIf="coordinadorSolicitudes.has(asignacion.idSolicitud) && asignacion.estado !== 'SOLUCIONADO'"
+          (click)="cerrarSolicitud(asignacion.idSolicitud)"
+          [disabled]="asignacion.estado === 'SOLUCIONADO'"
+        >
+          Cerrar Solicitud
+        </button>
       </tr>
     </tbody>
   </table>

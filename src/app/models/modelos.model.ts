@@ -22,21 +22,26 @@ export interface UsuarioModel {
   cliente: ClienteModel;
 }
 
-export interface RolModel{
+export interface RolModel {
   idRol: number;
   rol: string;
 }
 
-export interface ColaboradorModel{
-  idColaborador:number;
-  nombreColaborador:string;
-  telefonoColaborador:string;
+export interface ColaboradorModel {
+  idColaborador: number;
+  nombreColaborador: string;
+  telefonoColaborador: string;
   rol: RolModel;
 }
 
-export interface TipoSolicitudModel{
-  idTipoSolicitud:number;
-  tipoSolicitud:string;
+export interface TipoSolicitudModel {
+  idTipoSolicitud: number;
+  tipoSolicitud: string;
+}
+
+export interface EstadoModel{
+  idEstadoSolicitud: number
+  estadoSolicitud: string
 }
 
 export interface AsignacionDTOResponse {
@@ -46,5 +51,5 @@ export interface AsignacionDTOResponse {
   nombreUsuario: string;
   nombreTipoSolicitud: string;
   estado: string;
-  fechaRegistro: string; // o Date
+  fechaRegistro: string;
 }

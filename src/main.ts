@@ -8,6 +8,6 @@ import { routes } from './app/app.routes';
 bootstrapApplication(App, {
   providers: [
     provideRouter(routes),
-    provideHttpClient(), // ✅ Esto es lo que falta para que HttpClient funcione
+    provideHttpClient(),
   ],
 }).catch((err) => console.error(err));

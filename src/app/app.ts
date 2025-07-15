@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { TablaClientes } from "./admin/clientes/tabla/tabla";
 
 @Component({
   selector: 'app-root',

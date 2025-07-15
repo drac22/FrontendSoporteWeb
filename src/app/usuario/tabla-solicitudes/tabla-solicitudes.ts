@@ -15,12 +15,26 @@ export class TablaSolicitudes {
   constructor(public solicitudService: SolicitudService) {}
 
   ngOnInit() {
-    this.inicializarListaSolicitudesById(5);
+    const idUsuarioStr = localStorage.getItem('id');
+
+    if (idUsuarioStr) {
+      const idUsuario = parseInt(idUsuarioStr, 10);
+      this.inicializarListaSolicitudesById(idUsuario);
+    } else {
+      console.warn(
+        'No hay usuario logueado'
+      );
+    }
   }
 
   inicializarListaSolicitudesById(id: number): void {
-    this.solicitudService.listarSolicitudesById(id).subscribe((data) => {
-      this.solicitudesbyId = data;
-    });
+    this.solicitudService.listarSolicitudesById(id).subscribe(
+      (data) => {
+        this.solicitudesbyId = data;
+      },
+      (error) => {
+        console.error('❌ Error al obtener las solicitudes:', error);
+      }
+    );
   }
 }

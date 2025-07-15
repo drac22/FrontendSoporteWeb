@@ -10,8 +10,7 @@ export class SolicitudService {
     'http://localhost:8080/api/registrarSolicitud';
   private urlListarSolicitudesById =
     'http://localhost:8080/api/mostrarSolicitudesByIdUsuario';
-  private urlListarSolicitudes =
-    'http://localhost:8080/api/solicitudes';
+  private urlListarSolicitudes = 'http://localhost:8080/api/solicitudes';
 
   constructor(public http: HttpClient) {}
 
@@ -25,5 +24,17 @@ export class SolicitudService {
 
   public listarSolicitudesById(id: number): Observable<any[]> {
     return this.http.get<any[]>(`${this.urlListarSolicitudesById}/${id}`);
+  }
+
+  public actualizarSolicitud(idSolicitud: number): Observable<any> {
+    const actualizacionDTO = {
+      idEstado: 2,
+      fechaCulminacion: new Date(),
+    };
+
+    return this.http.put<any>(
+      `http://localhost:8080/api/solicitudes/${idSolicitud}`,
+      actualizacionDTO
+    );
   }
 }

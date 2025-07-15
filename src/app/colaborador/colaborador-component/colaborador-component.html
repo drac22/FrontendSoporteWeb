@@ -1,30 +1,22 @@
 <div class="formulario-actividad">
-    <h2>Registro de Actividad</h2>
-    <form>
-      <div class="campo">
-        <label for="detalle">Detalle de la Actividad</label>
-        <textarea
-          id="detalle"
-          name="detalle"
-          rows="4"
-          placeholder="Describe la actividad..."
-          required
-        ></textarea>
-      </div>
-  
-      <div class="campo">
-        <label for="tiempo">Tiempo utilizado</label>
-        <select id="tiempo" name="tiempo" required>
-          <option value="" disabled selected>Seleccione una opción</option>
-          <option>15 minutos</option>
-          <option>30 minutos</option>
-          <option>1 hora</option>
-          <option>2 horas</option>
-          <option>Más de 2 horas</option>
-        </select>
-      </div>
-  
-      <button type="submit" class="btn-registrar">Registrar Actividad</button>
-    </form>
-  </div>
-  
+  <h2>Registro de Actividad</h2>
+  <form [formGroup]="actividadForm" (ngSubmit)="registrarActividad()">
+    <div class="campo">
+      <label for="detalle">Detalle de la Actividad</label>
+      <textarea
+        id="detalle"
+        formControlName="detalle"
+        rows="4"
+        placeholder="Describe la actividad..."
+        required
+      ></textarea>
+    </div>
+
+    <div class="campo">
+      <label for="tiempo">Tiempo utilizado (minutos)</label>
+      <input id="tiempo" type="number" formControlName="tiempo" required />
+    </div>
+
+    <button type="submit" class="btn-registrar">Registrar Actividad</button>
+  </form>
+</div>
