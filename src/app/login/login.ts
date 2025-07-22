@@ -30,7 +30,7 @@ export class Login {
       })
       .subscribe({
         next: (res) => {
-          console.log('✅ Login correcto', res);
+          console.log('Login correcto', res);
 
           const tipo = res.tipo;
           const id = res.id;
@@ -47,7 +47,7 @@ export class Login {
           }
         },
         error: () => {
-          console.log('❌ Credenciales inválidas');
+          console.log('Credenciales inválidas');
           alert('Correo o contraseña incorrectos');
         },
       });

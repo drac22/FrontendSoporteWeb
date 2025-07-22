@@ -9,6 +9,24 @@
   </ul>
   <button (click)="logout()">Salir</button>
 </nav>
+
 <div class="contenido">
   <router-outlet></router-outlet>
+  <h1 class="titulo-notificaciones">🔔 Notificaciones</h1>
+  <div
+    *ngIf="notificaciones.length > 0; else sinNotificaciones"
+    class="lista-notificaciones"
+  >
+    <ul>
+      <li *ngFor="let noti of notificaciones" class="notificacion">
+        <div class="detalle">
+          <span class="fecha">{{ noti.fecha | date: 'dd/MM/yyyy HH:mm' }}</span>
+          <p class="mensaje">{{ noti.mensaje }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ng-template #sinNotificaciones>
+    <p class="mensaje-vacio">No tienes notificaciones nuevas.</p>
+  </ng-template>
 </div>

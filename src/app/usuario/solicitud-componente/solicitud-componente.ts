@@ -46,7 +46,7 @@ export class SolicitudComponente {
 
   registratSolicitud(): void {
     if (this.solicitudForm.valid) {
-      const idUsuario = parseInt(localStorage.getItem('id') || '0', 10); // 👈 Recupera y convierte a número
+      const idUsuario = parseInt(localStorage.getItem('id') || '0', 10);
 
       const SolicitudDTO = {
         idUsuario: idUsuario,
