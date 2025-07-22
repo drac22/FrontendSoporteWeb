@@ -15,11 +15,25 @@
         >Colaboradores</a
       >
     </li>
-    <li><a routerLink="/vistaAdmin/asignacion" routerLinkActive="activo">Asignación</a></li>
+    <li>
+      <a routerLink="/vistaAdmin/asignacion" routerLinkActive="activo"
+        >Asignación</a
+      >
+    </li>
   </ul>
   <button (click)="logout()">Salir</button>
 </nav>
 
 <div class="contenido">
   <router-outlet></router-outlet>
+</div>
+<div style="max-width: 400px; margin: auto">
+  <h3 style="text-align: center">📊 Estado de Solicitudes</h3>
+  <canvas
+    baseChart
+    [type]="chartType"
+    [data]="pieChartData"
+    [options]="{ responsive: true, plugins: { legend: { position: 'bottom' } } }"
+  >
+  </canvas>
 </div>
